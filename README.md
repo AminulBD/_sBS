@@ -5,10 +5,10 @@ Hi. I'm a starter theme called `_sBS`, or `underscores Bootstrap`, if you like. 
 
 My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
 
-* [Bootstrap](getbootstrap.com) version 3.3.1 included
-* [FontAwesome](fontawesome.io) version 4.2.0 included
-* [WP Bootstrap Navwalker](twittem.github.io/wp-bootstrap-navwalker) included with some customization
-* [SmartMenus](www.smartmenus.org) version 0.9.7
+* [Bootstrap](http://getbootstrap.com) version 3.3.1 included
+* [FontAwesome](http://fontawesome.io) version 4.2.0 included
+* [WP Bootstrap Navwalker](http://twittem.github.io/wp-bootstrap-navwalker) included with some customization
+* [SmartMenus](http://www.smartmenus.org) version 0.9.7
 * A just right amount of lean, well-commented, modern, HTML5 templates.
 * A helpful 404 template.
 * A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in `functions.php` and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
@@ -43,6 +43,8 @@ Then, update the stylesheet header in `style.css` and the links in `footer.php` 
 
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
+---------------
 This theme based on [underscores](https://github.com/Automattic/_s)
+---------------
 
 Good luck!
