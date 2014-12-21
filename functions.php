@@ -10,39 +10,39 @@
  * Define theme primary settings.
  */
 
-define("PROJECT_NAME", '_sBS'); // Project Name
-define("PROJECT_VERSION", '1.0.1'); // Project Version
-define("PROJECT_BS_VERSION", '3.3.1'); // Bootstrap Version
-define("PROJECT_FA_VERSION", '4.2.0'); // FontAwesome Version
-define("PROJECT_SM_VERSION", '0.9.7'); // SmartMenu Version
-define("PROJECT_TEXT_DOMAIN", '_sbs'); // Project Text Domain
-define("PROJECT_ASSETS", get_template_directory_uri() . '/assets'); // Project Assets Directory
-define("PROJECT_INC", get_template_directory() . '/inc'); // Project Included Directory
+define("_SBS_NAME", '_sBS'); // Project Name
+define("_SBS_VERSION", '1.0.1'); // Project Version
+define("_SBS_BS_VERSION", '3.3.1'); // Bootstrap Version
+define("_SBS_FA_VERSION", '4.2.0'); // FontAwesome Version
+define("_SBS_SM_VERSION", '0.9.7'); // SmartMenu Version
+define("_SBS_TEXT_DOMAIN", '_sbs'); // Project Text Domain
+define("_SBS_ASSETS", get_template_directory_uri() . '/assets'); // Project Assets Directory
+define("_SBS_INC", get_template_directory() . '/inc'); // Project Included Directory
 
 /**
  * Load theme function files and library
  */
 
 //Theme initial settings and functions
-require PROJECT_INC . '/theme_setup.php';
+require _SBS_INC . '/theme_setup.php';
 
 // Stylesheets and JavaScripts library for wp_enqueue_scripts.
-require PROJECT_INC . '/scripts.php';
+require _SBS_INC . '/scripts.php';
 
 // Implement the Custom Header feature.
-//require PROJECT_INC . '/custom-header.php';
+//require _SBS_INC . '/custom-header.php';
 
 // Custom template tags for this theme.
-require PROJECT_INC . '/template-tags.php';
+require _SBS_INC . '/template-tags.php';
 
 // Bootstrap navigation walker.
-require PROJECT_INC . '/wp_bootstrap_navwalker.php';
+require _SBS_INC . '/wp_bootstrap_navwalker.php';
 
 // Custom functions that act independently of the theme templates.
-require PROJECT_INC . '/extras.php';
+require _SBS_INC . '/extras.php';
 
 // Customizer additions.
-require PROJECT_INC . '/customizer.php';
+require _SBS_INC . '/customizer.php';
 
 // Load Jetpack compatibility file.
-require PROJECT_INC . '/jetpack.php';
+require _SBS_INC . '/jetpack.php';

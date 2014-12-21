@@ -18,15 +18,15 @@ function _sbs_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', PROJECT_TEXT_DOMAIN ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', _SBS_TEXT_DOMAIN ); ?></h1>
 		<ul class="pager">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<li class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', PROJECT_TEXT_DOMAIN ) ); ?></li>
+			<li class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', _SBS_TEXT_DOMAIN ) ); ?></li>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<li class="next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', PROJECT_TEXT_DOMAIN ) ); ?></li>
+			<li class="next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', _SBS_TEXT_DOMAIN ) ); ?></li>
 			<?php endif; ?>
 
 		</ul><!-- .nav-links -->
@@ -75,11 +75,11 @@ function _sbs_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', PROJECT_TEXT_DOMAIN ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', _SBS_TEXT_DOMAIN ); ?></h1>
 		<ul class="pager">
 			<?php
-				previous_post_link( '<li class="previous">%link</li>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', PROJECT_TEXT_DOMAIN ) );
-				next_post_link(     '<li class="next">%link</li>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     PROJECT_TEXT_DOMAIN ) );
+				previous_post_link( '<li class="previous">%link</li>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', _SBS_TEXT_DOMAIN ) );
+				next_post_link(     '<li class="next">%link</li>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     _SBS_TEXT_DOMAIN ) );
 			?>
 		</ul><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -105,12 +105,12 @@ function _sbs_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', PROJECT_TEXT_DOMAIN ),
+		_x( 'Posted on %s', 'post date', _SBS_TEXT_DOMAIN ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', PROJECT_TEXT_DOMAIN ),
+		_x( 'by %s', 'post author', _SBS_TEXT_DOMAIN ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -127,25 +127,25 @@ function _sbs_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', PROJECT_TEXT_DOMAIN ) );
+		$categories_list = get_the_category_list( __( ', ', _SBS_TEXT_DOMAIN ) );
 		if ( $categories_list && _sbs_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', PROJECT_TEXT_DOMAIN ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', _SBS_TEXT_DOMAIN ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', PROJECT_TEXT_DOMAIN ) );
+		$tags_list = get_the_tag_list( '', __( ', ', _SBS_TEXT_DOMAIN ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', PROJECT_TEXT_DOMAIN ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', _SBS_TEXT_DOMAIN ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', PROJECT_TEXT_DOMAIN ), __( '1 Comment', PROJECT_TEXT_DOMAIN ), __( '% Comments', PROJECT_TEXT_DOMAIN ) );
+		comments_popup_link( __( 'Leave a comment', _SBS_TEXT_DOMAIN ), __( '1 Comment', _SBS_TEXT_DOMAIN ), __( '% Comments', _SBS_TEXT_DOMAIN ) );
 		echo '</span>';
 	}
 
-	edit_post_link( __( 'Edit', PROJECT_TEXT_DOMAIN ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', _SBS_TEXT_DOMAIN ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -162,43 +162,43 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', PROJECT_TEXT_DOMAIN ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s', _SBS_TEXT_DOMAIN ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', PROJECT_TEXT_DOMAIN ), single_tag_title( '', false ) );
+		$title = sprintf( __( 'Tag: %s', _SBS_TEXT_DOMAIN ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', PROJECT_TEXT_DOMAIN ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Author: %s', _SBS_TEXT_DOMAIN ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', PROJECT_TEXT_DOMAIN ), get_the_date( _x( 'Y', 'yearly archives date format', PROJECT_TEXT_DOMAIN ) ) );
+		$title = sprintf( __( 'Year: %s', _SBS_TEXT_DOMAIN ), get_the_date( _x( 'Y', 'yearly archives date format', _SBS_TEXT_DOMAIN ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', PROJECT_TEXT_DOMAIN ), get_the_date( _x( 'F Y', 'monthly archives date format', PROJECT_TEXT_DOMAIN ) ) );
+		$title = sprintf( __( 'Month: %s', _SBS_TEXT_DOMAIN ), get_the_date( _x( 'F Y', 'monthly archives date format', _SBS_TEXT_DOMAIN ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', PROJECT_TEXT_DOMAIN ), get_the_date( _x( 'F j, Y', 'daily archives date format', PROJECT_TEXT_DOMAIN ) ) );
+		$title = sprintf( __( 'Day: %s', _SBS_TEXT_DOMAIN ), get_the_date( _x( 'F j, Y', 'daily archives date format', _SBS_TEXT_DOMAIN ) ) );
 	} elseif ( is_tax( 'post_format', 'post-format-aside' ) ) {
-		$title = _x( 'Asides', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Asides', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-		$title = _x( 'Galleries', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Galleries', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-		$title = _x( 'Images', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Images', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-		$title = _x( 'Videos', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Videos', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-		$title = _x( 'Quotes', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Quotes', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-		$title = _x( 'Links', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Links', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-		$title = _x( 'Statuses', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Statuses', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-		$title = _x( 'Audio', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Audio', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-		$title = _x( 'Chats', 'post format archive title', PROJECT_TEXT_DOMAIN );
+		$title = _x( 'Chats', 'post format archive title', _SBS_TEXT_DOMAIN );
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', PROJECT_TEXT_DOMAIN ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s', _SBS_TEXT_DOMAIN ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', PROJECT_TEXT_DOMAIN ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( __( '%1$s: %2$s', _SBS_TEXT_DOMAIN ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives', PROJECT_TEXT_DOMAIN );
+		$title = __( 'Archives',_SBSTEXT_DOMAIN );
 	}
 
 	/**

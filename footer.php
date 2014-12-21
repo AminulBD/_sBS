@@ -15,9 +15,9 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
 			<div class="site-info text-center">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', PROJECT_TEXT_DOMAIN ) ); ?>"><?php printf( __( 'Proudly powered by %s', PROJECT_TEXT_DOMAIN ), 'WordPress' ); ?></a>
+				<a href="<?php echo esc_url( __( 'http://wordpress.org/', _SBS_TEXT_DOMAIN ) ); ?>"><?php printf( __( 'Proudly powered by %s', _SBS_TEXT_DOMAIN ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', PROJECT_TEXT_DOMAIN ), PROJECT_NAME, '<a href=" ' . esc_url('http://aminul.net/projects/underscoresbs') . '" rel="designer">Aminul Islam</a>' ); ?>
+				<?php printf( __( 'Theme: %1$s by %2$s.', _SBS_TEXT_DOMAIN ), _SBS_NAME, '<a href=" ' . esc_url('http://aminul.net/projects/underscoresbs') . '" rel="designer">Aminul Islam</a>' ); ?>
 			</div><!-- .site-info -->
 		</div><!-- /.container -->
 	</footer><!-- #colophon -->

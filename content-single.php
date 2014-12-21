@@ -20,7 +20,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', PROJECT_TEXT_DOMAIN ),
+				'before' => '<div class="page-links">' . __( 'Pages:', _SBS_TEXT_DOMAIN ),
 				'after'  => '</div>',
 			) );
 		?>

@@ -21,6 +21,6 @@ add_action( 'customize_register', '_sbs_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function _sbs_customize_preview_js() {
-	wp_enqueue_script( '_sbs_customizer', PROJECT_ASSETS . '/js/customizer.js', array( 'customize-preview' ), PROJECT_VERSION, true );
+	wp_enqueue_script( '_sbs_customizer', _SBS_ASSETS . '/js/customizer.js', array( 'customize-preview' ), _SBS_VERSION, true );
 }
 add_action( 'customize_preview_init', '_sbs_customize_preview_js' );

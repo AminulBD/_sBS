@@ -8,8 +8,8 @@
 
 	<nav id="image-navigation" class="navigation image-navigation">
 		<ul class="pager">
-			<li class="previous"><?php previous_image_link( false, __( '<span aria-hidden="true">&larr;</span> Previous Image', PROJECT_TEXT_DOMAIN ) ); ?></li>
-			<li class="next"><?php next_image_link( false, __( 'Next Image <span aria-hidden="true">&rarr;</span>', PROJECT_TEXT_DOMAIN ) ); ?></li>
+			<li class="previous"><?php previous_image_link( false, __( '<span aria-hidden="true">&larr;</span> Previous Image', _SBS_TEXT_DOMAIN ) ); ?></li>
+			<li class="next"><?php next_image_link( false, __( 'Next Image <span aria-hidden="true">&rarr;</span>', _SBS_TEXT_DOMAIN ) ); ?></li>
 		</ul>
 	</nav><!-- .image-navigation -->
 
@@ -45,7 +45,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', PROJECT_TEXT_DOMAIN ),
+				'before' => '<div class="page-links">' . __( 'Pages:', _SBS_TEXT_DOMAIN ),
 				'after'  => '</div>',
 			) );
 		?>
