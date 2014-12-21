@@ -25,19 +25,19 @@ Getting Started
 
 After download this theme, the first thing you want to do is copy the `_sBS` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace with the name in all the templates
 
-1. Search for `'_sBS'` (inside single quotations) to capture the text domain.
-2. Search for `_sBS_` to capture all the function names.
-3. Search for `Text Domain: _sBS` in style.css.
+1. Search for `'_sbs'` (inside single quotations) to capture the text domain.
+2. Search for `_sbs_` to capture all the function names.
+3. Search for `Text Domain: _sbs` in style.css.
 4. Search for <code>&nbsp;_sBS</code> (with a space before it) to capture DocBlocks.
 5. Search for `_sBS-` to capture prefixed handles.
 
 OR
-
-* Search for: `'_sBS'` and replace with: `'megatherium'`
-* Search for: `_sBS_` and replace with: `megatherium_`
-* Search for: `Text Domain: _sBS` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_sBS</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_sBS-` and replace with: `megatherium-`
+* Search for: `'_SBS'` and replace with: `'megatherium'`
+* Search for: `'_sbs'` and replace with: `'megatherium'`
+* Search for: `_sbs_` and replace with: `megatherium_`
+* Search for: `Text Domain: _sbs` and replace with: `Text Domain: megatherium` in style.css.
+* Search for: <code>&nbsp;_sbs</code> and replace with: <code>&nbsp;Megatherium</code>
+* Search for: `_sbs-` and replace with: `megatherium-`
 
 Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
 
