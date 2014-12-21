@@ -11,7 +11,7 @@
  */
 
 define("_SBS_NAME", '_sBS'); // Project Name
-define("_SBS_VERSION", '1.0.1'); // Project Version
+define("_SBS_VERSION", '1.0.2'); // Project Version
 define("_SBS_BS_VERSION", '3.3.1'); // Bootstrap Version
 define("_SBS_FA_VERSION", '4.2.0'); // FontAwesome Version
 define("_SBS_SM_VERSION", '0.9.7'); // SmartMenu Version
