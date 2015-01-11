@@ -34,11 +34,11 @@ get_header(); ?>
 
 				<?php
 					// Next Prev post navigation
-					_sbs_paging_nav();
+					the_posts_navigation();
 				?>
 				<?php
 					// Numbered post pagination
-					//_sbs_num_paging_nav();
+					// the_posts_numbered_navigation();
 				?>
 
 			<?php else : ?>
