@@ -7,18 +7,18 @@
  * @package _sBS
  */
 
-if ( ! function_exists( '_sbs_paging_nav' ) ) :
+if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  */
-function _sbs_paging_nav() {
+function the_posts_navigation() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', _SBS_TEXT_DOMAIN ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', _SBS_TEXT_DOMAIN ); ?></h2>
 		<ul class="pager">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -35,11 +35,11 @@ function _sbs_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( '_sbs_num_paging_nav' )) :
+if ( ! function_exists( 'the_posts_numbered_navigation' )) :
 /**
  * Display navigation to numbered set of posts when applicable.
  */
-function _sbs_num_paging_nav () {
+function the_posts_numbered_navigation () {
 	global $wp_query;
     $big = 999999999; // need an unlikely integer
     $pages = paginate_links( array(
@@ -61,11 +61,13 @@ function _sbs_num_paging_nav () {
 }
 endif;
 
-if ( ! function_exists( '_sbs_post_nav' ) ) :
+if ( ! function_exists( 'the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
  */
-function _sbs_post_nav() {
+function the_post_navigation() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -75,11 +77,11 @@ function _sbs_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', _SBS_TEXT_DOMAIN ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', _SBS_TEXT_DOMAIN ); ?></h2>
 		<ul class="pager">
 			<?php
-				previous_post_link( '<li class="previous">%link</li>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', _SBS_TEXT_DOMAIN ) );
-				next_post_link(     '<li class="next">%link</li>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     _SBS_TEXT_DOMAIN ) );
+				previous_post_link( '<li class="previous">%link</li>', '%title' );
+				next_post_link(     '<li class="next">%link</li>', '%title' );
 			?>
 		</ul><!-- .nav-links -->
 	</nav><!-- .navigation -->
